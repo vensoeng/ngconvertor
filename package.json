@@ -1,0 +1,33 @@
+{
+  "name": "ngconvertor",
+  "version": "1.0.0",
+  "description": "NGConvertor enables developers to seamlessly convert numbers between Khmer and English (Arabic) numerals. Our mission is to bridge the gap between Latin and Khmer numeral systems and support an inclusive open-source ecosystem for Cambodian software development.",
+  "main": "ngConvertor.js",
+  "module": "ngConvertor.js",
+  "browser": "ngConvertor.js",
+  "scripts": {
+    "build": "echo No build step required"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vensoeng/ngconvertor.git"
+  },
+  "keywords": [
+    "khmer",
+    "number",
+    "convert",
+    "digits",
+    "cambodia",
+    "unicode",
+    "ngconvertor"
+  ],
+  "author": "YOUR_NAME",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vensoeng/ngconvertor/issues"
+  },
+  "homepage": "https://github.com/vensoeng/ngconvertor#readme",
+  "files": [
+    "ngConvertor.js"
+  ]
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Test</title>
+</head>
+<body>
+    <h1>Hello => User!</h1>
+    <hr>
+    <!-- content run from JS -->
+    <ul class="content"></ul>
+    <!-- CDN NGConvertor -->
+   <script src="https://vensoeng.vercel.app/ngconvertor@1.0.0/dist/ngConvertor.js"></script>
+   <!-- JS for page EX code -->
+   <script>
+        var datas = [
+            {
+                name: 'Dara',
+                age: "២០",
+                birthday: '2000-01-01',
+                phone: '012345678'
+            },
+            {
+                name: 'Nita',
+                age: "១៨",
+                birthday: '2007-08-06',
+                phone: '០៩៨៤៦២៤៦៧'
+            },
+            {
+                name: 'Chanda',
+                age: "៣០",
+                birthday: '1097-06-03',
+                phone: '697854039856'
+            },
+            {
+                name: 'Vichea',
+                age: "៤០",
+                birthday: '1080-04-02',
+                phone: '០១២៣៤៥៦៧៨៩'
+            }
+        ];
+        
+        var eToKhmer = document.querySelector('.to-khmer');
+        var eToEnglish = document.querySelector('.to-english');
+        var eConvert = document.querySelector('.convert');
+        // this is init on page 
+        document.addEventListener('DOMContentLoaded', function() {
+            datas.forEach(function(data) {
+                var li = document.createElement('li');
+                var text = `
+                    <h2>${data.name}</h2>
+                    <p>Age: ${ngConvertor.toEnglish(data.age)}</p><br>
+                    <p>Birthday: ${ngConvertor.toKhmer(data.birthday)}</p><br>
+                    <p>Phone: ${ngConvertor.convert(data.phone)}</p><br>
+                    <hr>
+                `;
+                li.innerHTML = text;
+                document.querySelector('.content').appendChild(li);
+            });
+        });
+   </script>
+</body>
+</html>

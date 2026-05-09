@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <center>Input: <input data-id="input" placeholder="Please enter number" type="text"><br></center>
+  <center>Output: <span data-id="output"> __ __ __ </span><br><br></center>
+  <center>ngconvertor@v2.1.0</center>
+  <script src="../dist/ngConvertor@2.1.0.js"></script>
+  <script>
+  //This is for make action feature Try it live
+  var input = document.querySelector("input[data-id='input']");
+  var output = document.querySelector("span[data-id='output']");
+  input.addEventListener("input", function() {
+      var value = input.value;
+      if (value.trim() === "") {
+          output.textContent = "__ __ __";
+          return;
+      }
+      if(ngConvertor.isKhmer(value.trim())) {
+        output.textContent = ngConvertor.toKhmerText(ngConvertor.toEnglish(value));
+        console.log(ngConvertor.isKhmer(value.trim()));
+        return;
+      } else if(ngConvertor.isKhmer(value.trim()) == false && ngConvertor.isEnglish(value.trim()) == false) {
+          alert("You enter invalid number! Please enter only Khmer or English number.");
+          output.textContent = "__ __ __";
+          input.value = "";
+          return;
+      }else{
+          var result = ngConvertor.toKhmerText(value);
+          output.textContent = result;
+      }
+  });
+  </script>
+</body>
+</html>
